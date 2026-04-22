@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+interface Exam {
+
+    boolean isPassed(int mark);
+}
+
+interface Classify {
+
+    String getDivision(double average);
+}
+
+class Result implements Exam, Classify {
+
+    public boolean isPassed(int mark) {
+
+        if (mark >= 40) {
+            return true;
+        } 
+        else {
+            return false;
+        }
+    }
+
+    public String getDivision(double average) {
+
+        if (average >= 60) {
+            return "First Division";
+        } 
+        else if (average >= 50) {
+            return "Second Division";
+        } 
+        else if (average >= 40) {
+            return "Third Division";
+        } 
+        else {
+            return "Fail";
+        }
+    }
+}
+
+public class practical17 {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        Result r = new Result();
+
+        System.out.print("Enter marks: ");
+        int marks = sc.nextInt();
+
+        System.out.print("Enter average marks: ");
+        double avg = sc.nextDouble();
+
+        boolean passStatus = r.isPassed(marks);
+        String division = r.getDivision(avg);
+
+        if (passStatus) {
+            System.out.println("Result: Passed");
+        } 
+        else {
+            System.out.println("Result: Failed");
+        }
+
+        System.out.println("Division: " + division);
+
+        sc.close();
+    }
+}
