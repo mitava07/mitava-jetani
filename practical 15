@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+class Employee {
+
+    String name;
+    String department;
+
+    void getEmployeeDetails() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        department = sc.nextLine();
+    }
+
+    void displayDetails() {
+
+        System.out.println("\nEmployee Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+    }
+}
+
+class Manager extends Employee {
+
+    int teamSize;
+    String projectName;
+
+    void getManagerDetails() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Manager Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Department: ");
+        department = sc.nextLine();
+
+        System.out.print("Enter Team Size: ");
+        teamSize = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Project Name: ");
+        projectName = sc.nextLine();
+    }
+
+    void displayDetails() {
+
+        System.out.println("\nManager Details:");
+        System.out.println("Name: " + name);
+        System.out.println("Department: " + department);
+        System.out.println("Team Size: " + teamSize);
+        System.out.println("Project Name: " + projectName);
+    }
+}
+
+public class practical15 {
+
+    public static void main(String[] args) {
+
+        Employee emp = new Employee();
+        emp.getEmployeeDetails();
+        emp.displayDetails();
+
+        Manager mgr = new Manager();
+        mgr.getManagerDetails();
+        mgr.displayDetails();
+    }
+}
