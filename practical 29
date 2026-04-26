@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class practical29 {
+
+    public static void main(String[] args) {
+
+        ArrayList<Integer> marks = new ArrayList<Integer>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter 5 student marks:");
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Enter mark " + (i + 1) + ": ");
+            marks.add(sc.nextInt());
+        }
+
+        System.out.println("\nStudent Marks:");
+
+        for (int m : marks) {
+            System.out.println(m);
+        }
+
+        int highest = Collections.max(marks);
+        int lowest = Collections.min(marks);
+
+        System.out.println("\nHighest Mark: " + highest);
+        System.out.println("Lowest Mark: " + lowest);
+
+        sc.close();
+    }
+}
